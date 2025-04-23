@@ -12,18 +12,21 @@ def procesar_transacciones(archivo_csv):
     #df = pd.read_csv(archivo_csv)
     df = pd.read_csv(archivo_csv, encoding='latin1')  # o cp1252
 
-
+    #calcula el "Balance final"
     credito_total = df[df["tipo"] == "Crédito"]["monto"].sum()
     debito_total = df[df["tipo"] == "Débito"]["monto"].sum()
     balance_final = credito_total - debito_total
 
+    #encuentra la "Transacción de Mayor Monto" y muestra el ID y el monto de l transacción encontrada
     transaccion_mayor = df.loc[df["monto"].idxmax()]
     id_mayor = transaccion_mayor["id"]
     monto_mayor = transaccion_mayor["monto"]
 
+    #contabiliza el total de transacciones del tipo Crédito y del tipo Dévito
     conteo_credito = (df["tipo"] == "Crédito").sum()
     conteo_debito = (df["tipo"] == "Débito").sum()
 
+    #"iprime el reporte solicitado
     print("\nReporte de Transacciones")
     print("---------------------------------------------")
     print(f"Balance Final: {balance_final:.2f}")
@@ -32,5 +35,5 @@ def procesar_transacciones(archivo_csv):
     print(f"  - Número total de trans. de Crédito: {conteo_credito} ")
     print(f"  - Número total de trans. de Débito: {conteo_debito}")
 
-# Cambia el nombre del archivo CSV si es necesario
+#usamos la funcion implementada para procesar el archivo CSV con el registro de transacciones
 procesar_transacciones("ejercicioTransacciones.csv")
