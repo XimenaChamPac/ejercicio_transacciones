@@ -1,58 +1,3 @@
-# Reto Técnico: Procesamiento de Transacciones Bancarias (CLI)
-
-## Objetivo:
-
-Desarrolla una aplicación de línea de comandos (CLI) que procese un archivo CSV con transacciones bancarias y genere un reporte que incluya:
-
-- **Balance Final:**  
-  Suma de los montos de las transacciones de tipo "Crédito" menos la suma de los montos de las transacciones de tipo "Débito".
-
-- **Transacción de Mayor Monto:**  
-  Identificar el ID y el monto de la transacción con el valor más alto.
-
-- **Conteo de Transacciones:**  
-  Número total de transacciones para cada tipo ("Crédito" y "Débito").
-
----
-
-## Instrucciones
-
-1. **Repositorio Base:**  
-   Clona o haz un fork del repositorio base disponible en:  
-   `https://github.com/codeableorg/interbank-academy-25`
-
-2. **Entrada de Datos:**  
-   La aplicación deberá leer un archivo CSV. Ejemplo de contenido:
-
-   ```
-   id,tipo,monto
-   1,Crédito,100.00
-   2,Débito,50.00
-   3,Crédito,200.00
-   4,Débito,75.00
-   5,Crédito,150.00
-   ```
-
-3. **Salida del Programa:**  
-   La aplicación debe mostrar el reporte final en la terminal.  
-   Ejemplo de salida:
-
-   ```
-   Reporte de Transacciones
-   ---------------------------------------------
-   Balance Final: 325.00
-   Transacción de Mayor Monto: ID 3 - 200.00
-   Conteo de Transacciones: Crédito: 3 Débito: 2
-   ```
-
-4. **Lenguaje de Programación:**  
-   Utiliza el lenguaje de tu preferencia. Opciones recomendadas:
-
-   - Python
-   - Java
-   - C#
-   - JavaScript (Node.js)
-
 5. **README del Proyecto:**  
    Incluye un archivo `README.md` con la siguiente estructura:
 
@@ -64,3 +9,35 @@ Desarrolla una aplicación de línea de comandos (CLI) que procese un archivo CS
 6. **Documentación y Calidad del Código:**
    - Código bien documentado y fácil de leer.
    - Comentarios explicando pasos clave y lógica del programa.
+
+-------------------------
+# Procesamiento de Transacciones Bancarias (CLI)
+
+## 💡 Introducción
+Este proyecto es una aplicación CLI en Python para procesar un archivo CSV con transacciones bancarias y generar un reporte con balance final, transacción de mayor monto y conteo total de transacciones por tipo.
+
+## 🚀 Instrucciones de Ejecución
+1. Clona el repositorio desde la base: https://github.com/codeableorg/interbank-academy-25
+Ejemplo desde Anaconda Tool:
+cd ruta/donde/quieres/guardar/el/proyecto
+git clone https://github.com/codeableorg/interbank-academy-25.git
+cd interbank-academy-25
+
+2. Activa el entorno virtual.
+conda create -n transacciones-env python=3.10 -y
+conda activate transacciones-env
+* Si hay dependencias puedes instalarlas
+pip install pandas
+
+3. Ejecuta `main.py` con un archivo `ejercicioTransacciones.csv` en el mismo directorio.
+
+## 🧠 Enfoque y Solución
+Se utiliza `pandas` para leer el CSV y realizar cálculos según el tipo de transacción. 
+
+## 📁 Estructura del Proyecto
+- `transacciones.py`: Código principal
+- `ejercicioTransacciones.csv`: Archivo de entrada de ejemplo
+- `README.md`: Esta documentación
+
+## 🧼 Calidad del Código
+El código está comentado y estructurado para facilitar su lectura.
